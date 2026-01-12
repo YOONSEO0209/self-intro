@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김서연 - Frontend Developer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Noto Sans KR) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem;
+        }
+        /* Fade-in Animation Initial State */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(2.5rem);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-slate-800 selection:bg-purple-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/70 backdrop-blur-md z-50 border-b border-white/20 shadow-sm">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent cursor-default">
+                KSY.DEV
+            </div>
+            <div class="flex gap-4 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-purple-600 transition-colors">소개</a>
+                <a href="#skills" class="hover:text-purple-600 transition-colors">기술</a>
+                <a href="#projects" class="hover:text-purple-600 transition-colors">프로젝트</a>
+                <a href="#contact" class="hover:text-purple-600 transition-colors">연락처</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-20 space-y-20">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="fade-enter">
+            <div class="bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 flex flex-col md:flex-row items-center gap-10 hover:shadow-2xl transition-shadow duration-300">
+                
+                <!-- Profile Image -->
+                <div class="relative shrink-0 group">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-4 ring-purple-100 shadow-lg relative z-10 bg-gradient-to-tr from-purple-200 to-pink-200">
+                        <img 
+                            src="https://api.dicebear.com/9.x/avataaars/svg?seed=Seoyeon&backgroundColor=e0e7ff" 
+                            alt="Kim Seoyeon" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="absolute inset-0 rounded-full bg-purple-400 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 -z-10 transform scale-110"></div>
+                </div>
+
+                <!-- Hero Text -->
+                <div class="text-center md:text-left space-y-4">
+                    <div class="space-y-1">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold tracking-wider rounded-full mb-2">
+                            PORTFOLIO
+                        </span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+                            김서연
+                            <span class="text-xl md:text-2xl text-slate-500 font-normal ml-2 block md:inline md:ml-3">
+                                Kim Seoyeon
+                            </span>
+                        </h1>
+                        <p class="text-xl text-purple-600 font-semibold">Frontend Developer</p>
+                    </div>
+                    
+                    <p class="text-slate-600 text-lg leading-relaxed max-w-lg">
+                        "사용자 경험을 최우선으로 생각하는 프론트엔드 개발자입니다."
+                    </p>
+
+                    <div class="flex justify-center md:justify-start gap-3 pt-2">
+                        <a href="mailto:seoyeon.kim@example.com" class="social-btn" aria-label="Email">
+                            <i data-lucide="mail" class="w-[18px] h-[18px]"></i>
+                            <span class="font-medium text-sm">Email</span>
+                        </a>
+                        <a href="https://github.com/seoyeonkim" target="_blank" class="social-btn" aria-label="GitHub">
+                            <i data-lucide="github" class="w-[18px] h-[18px]"></i>
+                            <span class="font-medium text-sm">GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/seoyeonkim" target="_blank" class="social-btn" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-[18px] h-[18px]"></i>
+                            <span class="font-medium text-sm">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="scroll-mt-24">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="p-2 bg-white rounded-lg shadow-sm">
+                        <i data-lucide="user" class="text-purple-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-800">About Me</h2>
+                </div>
+                <p class="text-slate-700 leading-8 text-lg">
+                    안녕하세요! 3년차 프론트엔드 개발자 김서연입니다. 사용자가 직관적으로 사용할 수 있는 인터페이스를 만드는 것에 열정을 가지고 있습니다. 최신 웹 기술을 활용하여 빠르고 아름다운 웹 애플리케이션을 개발하는 것을 즐깁니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="scroll-mt-24">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="p-2 bg-white rounded-lg shadow-sm">
+                        <i data-lucide="code" class="text-pink-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-800">Tech Stack</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Frontend -->
+                    <div class="skill-group-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="p-1.5 rounded-lg bg-blue-50 text-blue-600">
+                                <i data-lucide="terminal" class="w-5 h-5"></i>
+                            </span>
+                            <h3 class="font-bold text-slate-700">Frontend Development</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Vue.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Styling -->
+                    <div class="skill-group-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="p-1.5 rounded-lg bg-pink-50 text-pink-600">
+                                <i data-lucide="palette" class="w-5 h-5"></i>
+                            </span>
+                            <h3 class="font-bold text-slate-700">Styling & Design</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Sass</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Styled-components</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-group-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="p-1.5 rounded-lg bg-purple-50 text-purple-600">
+                                <i data-lucide="code-2" class="w-5 h-5"></i>
+                            </span>
+                            <h3 class="font-bold text-slate-700">Tools & DevOps</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Webpack</span>
+                            <span class="skill-tag">Vite</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-group-card">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="p-1.5 rounded-lg bg-indigo-50 text-indigo-600">
+                                <i data-lucide="database" class="w-5 h-5"></i>
+                            </span>
+                            <h3 class="font-bold text-slate-700">Backend & Others</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">REST API</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="projects" class="scroll-mt-24">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="p-2 bg-white rounded-lg shadow-sm">
+                        <i data-lucide="layout" class="text-blue-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-800">Experience & Projects</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Project 1 -->
+                    <div class="project-card group">
+                        <div class="project-icon">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h3 class="text-lg font-bold text-slate-800 group-hover:text-purple-700 transition-colors">
+                                    E-commerce 플랫폼 리뉴얼
+                                </h3>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <p class="text-slate-600">기존 쇼핑몰의 성능 개선 및 UI/UX 전면 개편</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card group">
+                        <div class="project-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h3 class="text-lg font-bold text-slate-800 group-hover:text-purple-700 transition-colors">
+                                    모바일 반응형 대시보드 개발
+                                </h3>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <p class="text-slate-600">데이터 시각화 및 실시간 모니터링 시스템 구축</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card group">
+                        <div class="project-icon">
+                            <i data-lucide="pen-tool"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h3 class="text-lg font-bold text-slate-800 group-hover:text-purple-700 transition-colors">
+                                    디자인 시스템 구축
+                                </h3>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <p class="text-slate-600">일관된 UI를 위한 컴포넌트 라이브러리 제작 및 문서화</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Footer -->
+        <footer id="contact" class="text-center pt-10 pb-6">
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-6">Let's Work Together!</h2>
+                    <p class="text-white/90 mb-8 max-w-xl mx-auto">
+                        새로운 프로젝트나 협업 제안은 언제나 환영합니다.<br/>
+                        이메일로 편하게 연락주세요.
+                    </p>
+                    <a href="mailto:seoyeon.kim@example.com" class="inline-flex items-center gap-2 bg-white text-purple-700 font-bold py-3 px-8 rounded-full hover:bg-purple-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Contact Me
+                    </a>
+                    
+                    <div class="mt-10 flex justify-center gap-6 text-white/70">
+                        <a href="https://seoyeon.dev" target="_blank" class="hover:text-white flex items-center gap-2 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Blog
+                        </a>
+                        <a href="https://github.com/seoyeonkim" target="_blank" class="hover:text-white flex items-center gap-2 transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/seoyeonkim" target="_blank" class="hover:text-white flex items-center gap-2 transition-colors">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Decorative Circles -->
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-purple-900 opacity-20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+            </div>
+            <p class="text-slate-400 text-sm mt-8">
+                © 2024 Kim Seoyeon. All rights reserved.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reusable styles via JS adding classes (to keep HTML clean above)
+        // Note: In a real project, these would be utility classes, but here we add specific complex class strings to elements if needed, 
+        // OR we just use the Tailwind classes directly in HTML as done above.
+        // Below is just the logic for interactions.
+
+        // Fade-in animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.getElementById('hero');
+            setTimeout(() => {
+                heroSection.classList.add('fade-enter-active');
+            }, 100);
+        });
+
+        // Add tailwind classes to elements that repeat often to keep HTML cleaner? 
+        // No, for single file HTML, explicit classes are better for copy-paste.
+        
+        // Let's define the complex repeated classes here for clarity in the style block or apply them via simple JS helper if I were generating dynamic content.
+        // Since content is static, classes are applied inline above.
+    </script>
+
+    <!-- Additional Inline Styles for Reused Components -->
+    <style type="text/tailwindcss">
+        @layer components {
+            .social-btn {
+                @apply flex items-center gap-2 px-4 py-2 bg-white border border-slate-100 rounded-full text-slate-600 hover:text-purple-600 hover:border-purple-200 hover:shadow-md transition-all duration-300;
+            }
+            .section-card {
+                @apply bg-white/70 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-lg border border-white/40 hover:shadow-xl transition-shadow duration-300;
+            }
+            .section-header {
+                @apply flex items-center gap-3 mb-8 border-b border-slate-100 pb-4;
+            }
+            .skill-group-card {
+                @apply bg-white/50 rounded-xl p-5 border border-white/50;
+            }
+            .skill-tag {
+                @apply px-3 py-1 bg-white border border-slate-100 rounded-full text-sm font-medium text-slate-600 shadow-sm hover:scale-105 transition-transform cursor-default;
+            }
+            .project-card {
+                @apply flex flex-col md:flex-row gap-4 p-5 rounded-2xl bg-slate-50 hover:bg-white border border-transparent hover:border-purple-100 hover:shadow-md transition-all duration-300;
+            }
+            .project-icon {
+                @apply flex-shrink-0 w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform duration-300;
+            }
+            .project-year {
+                @apply text-sm font-medium text-slate-400 bg-white px-2 py-1 rounded-md shadow-sm border border-slate-100;
+            }
+        }
+    </style>
+</body>
+</html>
